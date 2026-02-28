@@ -2,18 +2,18 @@ package Tree.BinarySearchTree;
 
 
 
-class Node {
-    int data;
-    Node left, right;
 
-    Node(int data) {
-        this.data = data;
-        left = right = null;
-    }
-}
 
 public class BST {
+    static class Node {
+        int data;
+        Node left, right;
 
+
+        public Node(int val) {
+            this.data  =  val;
+        }
+    }
   public static Node insert(int val,Node root)
   {
       if(root== null)
@@ -46,6 +46,16 @@ public static  boolean balnced(Node root)
     if(Math.abs(l-r) > 1)return false;
     return balnced(root.right) && balnced(root.left);
 }
+public static void preorder(Node root)
+{
+    if(root ==  null)
+        return ;
+
+  preorder(root.left);
+    System.out.println(root.data);
+  preorder(root.right);
+
+}
 
     public static void main(String[] args) {
         Node root = null;
@@ -58,6 +68,7 @@ public static  boolean balnced(Node root)
         int h   = height(root);
         System.out.println(h);
         System.out.println(balnced(root));
+       preorder(root);
 
 
 

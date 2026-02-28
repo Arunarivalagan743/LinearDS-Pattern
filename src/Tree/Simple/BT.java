@@ -1,15 +1,15 @@
-package Tree.BinaryTree;
+package Tree.Simple;
 
 import java.util.Scanner;
 
-class Node {
-    int data;
-    Node left;
-    Node right;
-}
+
 
 public class BT {
-
+    static class Node {
+        int data;
+        Node left;
+        Node right;
+    }
     static Scanner sc = new Scanner(System.in);
 
     public static Node create() {
@@ -66,8 +66,9 @@ public class BT {
         }
 
         preorder(root.left);
-        System.out.println(root.data);
+
         preorder(root.right);
+        System.out.println(root.data);
     }
 
 
